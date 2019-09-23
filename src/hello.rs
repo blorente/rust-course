@@ -32,7 +32,7 @@ fn string_and_printing() {
     // A `String` – a heap-allocated string
     let s: String = "hello world".to_string();
 
-    // String interpolation
+    // String interpolatio
     let s: String = format!("I have {} cookies", 2);
 
     // A string slice – an immutable view into another string
@@ -185,14 +185,14 @@ fn traits() {
 
         fn noise(self) -> String {
             if self.is_hungry {
-                String::from("Meow!");
+                String::from("Meow!")
             } else {
                 String::from("Prrrrr...")
             }
         }
     }
     
-    let roger = Cat::new("Roger");
+    let roger = Cat::new(String::from("Roger"));
     roger.noise(); // Meow!
     roger.feed();
     roger.noise(); // Prrrrr...
@@ -260,9 +260,9 @@ fn control_flow() {
 
 fn error_handling_patterns() {
     // The Result enum
-    enum Result<T, Y> {
-        Ok<T>,
-        Err<Y>,
+    enum MyResult<T, Y> {
+        Ok(T),
+        Err(Y),
     }
 
     // If we have the following...
@@ -311,7 +311,7 @@ fn hash_derive() {
     }
 
     let pp = PrintablePoint {x: 1, y: 2};
-    println!("New Point {}", pp); // Error!
+    println!("New Point {:?}", pp); // Error!
 }
 
 
